@@ -19,7 +19,7 @@ If your windows is activated, do give it a try and DM me :)
 #include <iostream>
 #include "tlhelp32.h"
 #include "libloaderapi.h"
-#include "error.h"
+
 
 typedef int(__stdcall* f_funci)(DWORD ProccessID, LPCWSTR lpFileName, int n);
 
@@ -48,7 +48,7 @@ int Dumper(char* procname) {
 	else {
 		printf("\nDumping Proc\n");
 		if (!(f_funci)(pe.th32ProcessID, f, 0)) { 
-			printf("%s", GetLastErrorStdStr().c_str());
+			printf("%s", GetLastError());
 		}
 	}
 	//printf("%s",funci);
@@ -58,4 +58,5 @@ int Dumper(char* procname) {
 int main() {
 	char procname[] = "lsass.exe";
 	Dumper(procname);
+	return 0;
 }
