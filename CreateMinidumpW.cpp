@@ -11,8 +11,6 @@ What to do :
  * change name of proc in procname variable in main(). I used lsass.exe during tests.
 Expectation :
   * Should create dump of defined proc into current dir with name dump.bin
-Notes : Able to find export, hitting with error : The requested lookup key was not found in any active activation context.
-If your windows is activated, do give it a try and DM me :)
 */
 
 #include <windows.h>
